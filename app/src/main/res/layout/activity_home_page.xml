@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_green_light">
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:src="@drawable/college" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="360dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="6dp"
+                android:fontFamily="@font/autour_one"
+                android:text=" Welcome To Centenario School !"
+                android:textColor="#19026A"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <Button
+
+                android:id="@+id/btnStudent"
+                android:layout_width="147dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="420dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/rounded_corner"
+                android:fontFamily="@font/autour_one"
+                android:text="STUDENT"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <Button
+
+                android:id="@+id/btnAdmin"
+                android:layout_width="147dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="500dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/rounded_corner"
+                android:fontFamily="@font/autour_one"
+                android:text="ADMIN"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <Button
+
+                android:id="@+id/btnguest"
+                android:layout_width="147dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="580dp"
+                android:background="@drawable/rounded_corner"
+                android:fontFamily="@font/autour_one"
+                android:text="GUEST"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:textStyle="bold"/>
+
+
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

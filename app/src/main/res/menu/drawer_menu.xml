@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_contact"
+            android:icon="@drawable/ic_baseline_contact_phone_24"
+            android:title="Contact Number" />
+        <item
+            android:id="@+id/nav_addresss"
+            android:icon="@drawable/address"
+            android:title="Department Address" />
+        <item
+            android:id="@+id/nav_email"
+            android:icon="@drawable/ic_baseline_contact_mail_24"
+            android:title="Email Address" />
+        <item
+            android:id="@+id/nav_department_map"
+            android:icon="@drawable/ic_baseline_navigation_24"
+            android:title="Department Map" />
+
+
+        <item
+            android:id="@+id/nav_covid19_screening"
+            android:icon="@drawable/ic_baseline_coronavirus_24"
+            android:title="COVID-19 screening" />
+        <item
+            android:id="@+id/nav_educational_resources"
+            android:icon="@drawable/ic_baseline_local_library_24"
+            android:title="Educational resources" />
+        <item
+            android:id="@+id/nav_your_personal_notes"
+            android:icon="@drawable/ic_baseline_notes_24"
+            android:title="Your personal notes" />
+
+        <item
+            android:id="@+id/nav_shift_evaluation_form"
+            android:icon="@drawable/ic_baseline_picture_as_pdf_24"
+            android:title="Shift Evaluation Form" />
+    </group>
+
+
+</menu>
