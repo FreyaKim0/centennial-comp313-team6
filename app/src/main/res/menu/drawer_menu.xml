@@ -39,6 +39,12 @@
             android:id="@+id/nav_shift_evaluation_form"
             android:icon="@drawable/ic_baseline_picture_as_pdf_24"
             android:title="Shift Evaluation Form" />
+
+        <item
+            android:id="@+id/nav_registration_status_check"
+            android:icon="@drawable/ic_baseline_picture_as_pdf_24"
+            android:title="Student registration status" />
+
     </group>
 
 
