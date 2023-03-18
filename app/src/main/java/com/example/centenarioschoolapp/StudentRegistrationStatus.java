@@ -15,14 +15,19 @@ public class StudentRegistrationStatus extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_registration_status);
-       if(mockStatus=="API return 'Mock Server Error'")
+        if (mockStatus.equals("API return 'Mock Server Error'"))
         {
           nav_registration_status_message=(TextView)findViewById(R.id.nav_registration_status_message);
           nav_registration_status_message.setText("Server Error...");
         }
-        if(mockStatus=="API return 'Student name not existing'")
+        if (mockStatus.equals("API return 'Student name not existing'"))
         {
           nav_registration_status_message.setText("This Student Not Existing");
         }
+    }
+
+    public String setMockStatus(String status) {
+        String mockStatus = status;
+        return status;
     }
 }
