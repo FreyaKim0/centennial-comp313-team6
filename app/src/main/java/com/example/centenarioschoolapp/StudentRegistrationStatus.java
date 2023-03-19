@@ -3,18 +3,13 @@ package com.example.centenarioschoolapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
+
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
-
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -23,17 +18,19 @@ public class StudentRegistrationStatus extends AppCompatActivity {
     // Test: "API return 'Mock Server Error'"
     // Test: "API return 'Student name not existing'"
     String mockStatus="";
+
     private EditText searchInput;
-    private TextView resultText;
+    private Button searchButton;
+    // private TextView resultText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_registration_status);
 
-        searchInput = findViewById(R.id.search_input);
-        Button searchButton = findViewById(R.id.search_button);
-        resultText = findViewById(R.id.result_text);
+        searchInput = findViewById(R.id.nav_registration_search_name_input);
+        searchButton = findViewById(R.id.nav_registration_search_button);
+        //resultText = findViewById(R.id.result_text);
 
         if (mockStatus.equals("API return 'Mock Server Error'"))
         {
@@ -45,18 +42,16 @@ public class StudentRegistrationStatus extends AppCompatActivity {
           nav_registration_status_message.setText("This Student Not Existing");
         }
 
-
-
-        Button searchButton = findViewById(R.id.search_button);
+        // Wait for API build
+        /*
         searchButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String input = searchInput.getText().toString();
-                sendRequestToServer(input);
-            }
-
+                @Override
+                public void onClick(View view) {
+                    String input = searchInput.getText().toString();
+                    sendRequestToServer(input);
+                }
         });
-    
+        */
     }
 
     public String setMockStatus(String status) {
@@ -64,8 +59,9 @@ public class StudentRegistrationStatus extends AppCompatActivity {
         return status;
     }
 
-
-        private void sendRequestToServer(String input) {
+    // Wait for API build
+    /*private void sendRequestToServer(String input)
+    {
             String url = "https://yourserver.com/search";
             JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, getRequestBody(input),
                     new Response.Listener<JSONObject>() {
@@ -95,8 +91,10 @@ public class StudentRegistrationStatus extends AppCompatActivity {
                         }
                     });
             Volley.newRequestQueue(this).add(request);
-        }
-        private JSONObject getRequestBody(String input) {
+    }
+
+    private JSONObject getRequestBody(String input)
+    {
             JSONObject jsonObject = new JSONObject();
             try {
                 jsonObject.put("registrationNumber", input);
@@ -104,8 +102,6 @@ public class StudentRegistrationStatus extends AppCompatActivity {
                 e.printStackTrace();
             }
             return jsonObject;
-        }
-
-
+    }*/
 }
 

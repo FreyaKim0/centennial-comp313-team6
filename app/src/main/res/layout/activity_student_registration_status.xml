@@ -36,11 +36,49 @@
                 android:layout_height="match_parent">
 
                 <TextView
+                    android:id="@+id/nav_registration_instruction_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginEnd="48dp"
+                    android:fontFamily="sans-serif"
+                    android:text="Enter Student Full Name"
+                    android:textColor="#19026A"
+                    android:textSize="30dp"
+                    android:textStyle="normal|bold" />
+
+                <EditText
+                    android:id="@+id/nav_registration_search_name_input"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="48dp"
+                    android:layout_marginLeft="80dp"
+                    android:layout_marginTop="48dp"
+                    android:layout_marginEnd="80dp"
+                    android:layout_marginBottom="48dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:ems="30"
+                    android:inputType="textPersonName"
+                    android:text="Name"
+                    android:textSize="40sp" />
+
+                <Button
+                    android:id="@+id/nav_registration_search_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="130dp"
+                    android:text="SEARCH"
+                    android:textSize="35sp" />
+
+                <TextView
                     android:id="@+id/nav_registration_status_message"
                     android:layout_width="wrap_content"
                     android:layout_height="360dp"
                     android:layout_centerInParent="true"
-                    android:layout_marginTop="300dp"
+                    android:layout_marginTop="450dp"
                     android:fontFamily="sans-serif"
                     android:text="Press the SEARCH button ,\nRegistration status will be displayed here."
                     android:textColor="#19026A"
