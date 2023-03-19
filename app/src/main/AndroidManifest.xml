@@ -9,11 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CentenarioSchoolApp">
-<<<<<<< Updated upstream
-
-=======
         <activity android:name=".StudentRegistrationStatus" />
->>>>>>> Stashed changes
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.CentenarioSchoolApp.NoActionBar">

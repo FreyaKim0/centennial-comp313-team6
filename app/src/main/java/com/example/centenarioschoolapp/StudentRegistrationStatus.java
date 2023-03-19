@@ -20,8 +20,8 @@ public class StudentRegistrationStatus extends AppCompatActivity {
     // Test: "API return 'Mock Server Error'"
     // Test: "API return 'Student name not existing'"
     String mockStatus = "";
-
     private ImageView imageViewCheckValidName;
+
     private EditText searchInput;
     private Button searchButton;
     // private TextView resultText;
@@ -33,6 +33,7 @@ public class StudentRegistrationStatus extends AppCompatActivity {
 
         searchInput = findViewById(R.id.nav_registration_search_name_input);
         searchButton = findViewById(R.id.nav_registration_search_button);
+        
         imageViewCheckValidName = findViewById(R.id.imageView_check_valid_name);
         //resultText = findViewById(R.id.result_text);
 
@@ -56,8 +57,6 @@ public class StudentRegistrationStatus extends AppCompatActivity {
 
             }
         });
-
-
         // Wait for API build
         /*
         searchButton.setOnClickListener(new View.OnClickListener() {
