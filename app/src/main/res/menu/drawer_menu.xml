@@ -2,7 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
-
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_contact"
@@ -20,8 +19,6 @@
             android:id="@+id/nav_department_map"
             android:icon="@drawable/ic_baseline_navigation_24"
             android:title="Department Map" />
-
-
         <item
             android:id="@+id/nav_covid19_screening"
             android:icon="@drawable/ic_baseline_coronavirus_24"
@@ -34,18 +31,13 @@
             android:id="@+id/nav_your_personal_notes"
             android:icon="@drawable/ic_baseline_notes_24"
             android:title="Your personal notes" />
-
         <item
             android:id="@+id/nav_shift_evaluation_form"
             android:icon="@drawable/ic_baseline_picture_as_pdf_24"
             android:title="Shift Evaluation Form" />
-
         <item
             android:id="@+id/nav_registration_status_check"
             android:icon="@drawable/search"
             android:title="Student registration status" />
-
     </group>
-
-
 </menu>

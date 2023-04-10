@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"com.example.centenarioschoolapp","l":"HomePage"},{"p":"com.example.centenarioschoolapp","l":"MainActivity"},{"p":"com.example.centenarioschoolapp","l":"StudentRegistrationStatus"},{"p":"com.example.centenarioschoolapp","l":"StudentRegistrationStatusTest"}]
