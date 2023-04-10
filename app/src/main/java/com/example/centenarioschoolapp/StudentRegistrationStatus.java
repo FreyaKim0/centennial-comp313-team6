@@ -57,66 +57,11 @@ public class StudentRegistrationStatus extends AppCompatActivity {
 
             }
         });
-        // Wait for API build
-        /*
-        searchButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    String input = searchInput.getText().toString();
-                    sendRequestToServer(input);
-                }
-        });
-        */
     }
 
     public String setMockStatus(String status) {
         String mockStatus = status;
         return status;
     }
-
-    // Wait for API build
-    /*private void sendRequestToServer(String input)
-    {
-            String url = "https://yourserver.com/search";
-            JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, getRequestBody(input),
-                    new Response.Listener<JSONObject>() {
-                        @Override
-                        public void onResponse(JSONObject response) {
-                            try {
-                                String registrationNumber = response.getString("registrationNumber");
-                                boolean isRegistered = response.getBoolean("isRegistered");
-                                String registrationDate = response.getString("registrationDate");
-
-                                String result = "Registration Number: " + registrationNumber + "\n" +
-                                        "Is Registered: " + isRegistered + "\n" +
-                                        "Registration Date: " + registrationDate;
-
-                                resultText.setText(result);
-                                resultText.setVisibility(View.VISIBLE);
-
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    },
-                    new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-                            Log.e("Error", "Error Occurred: " + error.getMessage());
-                        }
-                    });
-            Volley.newRequestQueue(this).add(request);
-    }
-
-    private JSONObject getRequestBody(String input)
-    {
-            JSONObject jsonObject = new JSONObject();
-            try {
-                jsonObject.put("registrationNumber", input);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            return jsonObject;
-    }*/
 }
 
