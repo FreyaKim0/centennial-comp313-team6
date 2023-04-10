@@ -10,6 +10,7 @@ Yoo, Halim<br>
 
 Java Doc<br>
 --------------<br>
+https://github.com/FreyaKim0/centennial-comp313-team6/tree/main/JavaDoc/com/example/centenarioschoolapp <br>
 --------------<br>
 
 
