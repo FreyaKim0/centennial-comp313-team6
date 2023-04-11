@@ -1,6 +1,11 @@
 ﻿# centennial-comp313-team6
  
-memeber<br>
+- Java Doc<br>
+--------------<br>
+https://github.com/FreyaKim0/centennial-comp313-team6/tree/main/JavaDoc/com/example/centenarioschoolapp 
+<br>--------------<br>
+
+- memeber<br>
 --------------<br>
 Jin, Xu-Tung<br>
 Lee, Kyeongbeom<br>
@@ -8,9 +13,7 @@ Mazid, Syeda Sakina<br>
 Yoo, Halim<br>
 ---------------<br><br>
 
-Java Doc<br>
+- Jira board<br>
 --------------<br>
-https://github.com/FreyaKim0/centennial-comp313-team6/tree/main/JavaDoc/com/example/centenarioschoolapp 
+https://trello.com/b/sLXJt6b1/hospital-app
 <br>--------------<br>
-
-
