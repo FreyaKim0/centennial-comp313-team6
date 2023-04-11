@@ -49,19 +49,26 @@ public class StudentRegistrationStatus extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if (searchInput.getText().toString().equals("Freya Jin") || searchInput.getText().toString().equals("Justin Lee")) {
+                String inputName = searchInput.getText().toString();
+                // Call GET api here - Justin's task
+
+                if (setApiReturnStatus()) {
                     imageViewCheckValidName.setImageResource(R.drawable.yes);
                 } else {
                     imageViewCheckValidName.setImageResource(R.drawable.no);
                 }
-
             }
         });
     }
 
-    public String setMockStatus(String status) {
-        String mockStatus = status;
-        return status;
+    // Update backend status from here - Freya's task
+    public boolean setApiReturnStatus() {
+        if(1==1/*Return registration is true*/){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }
 

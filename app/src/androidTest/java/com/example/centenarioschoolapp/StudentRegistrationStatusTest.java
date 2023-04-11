@@ -22,7 +22,6 @@ import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
-
 /**
  * Instrumented test, which will execute on an Android device.
  *
@@ -33,8 +32,37 @@ public class StudentRegistrationStatusTest {
 
     @Test
     public void useAppContext() {
-        // Test case 1: Test if the whole app render successfully
+        // Test case 1 frontend: Test if the whole app render successfully
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
         assertEquals("com.example.centenarioschoolapp", appContext.getPackageName());
+
+        // Test case 2 frontend: Test render if the return student registration is true
+
+        /*
+        ON HOLD FOR　API
+
+        boolean mockAPIReturnStatus = true;
+        BackendService mockBackendService = mock(BackendService.class);
+        when(mockBackendService.getBooleanValue()).thenReturn(backendValue);
+
+        StudentRegistrationStatus testPage = new StudentRegistrationStatus(mockBackendService);
+        boolean result = testPage.setApiReturnStatus();
+
+        assertEquals(true, result);
+         */
+
+        // Test case 3 Test render if the return data student registration is false
+
+        /*
+        ON HOLD FOR　API
+
+        boolean mockAPIReturnStatus = false;
+        BackendService mockBackendService = mock(BackendService.class);
+        when(mockBackendService.getBooleanValue()).thenReturn(backendValue);
+
+        StudentRegistrationStatus testPage = new StudentRegistrationStatus(mockBackendService);
+        boolean result = testPage.setApiReturnStatus();
+
+        assertEquals(false, result);*/
     }
 }
