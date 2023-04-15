@@ -1,0 +1,53 @@
+import pymongo
+
+# Replace the connection string with your MongoDB Atlas connection string
+client = pymongo.MongoClient("<connection_string>")
+
+# Choose a database and collection
+db = client["mydatabase"]
+collection = db["mycollection"]
+
+# Define the documents to insert
+documents = [
+    {
+        "_id": {
+            "$oid": "6435d2d83308bd6d0ef8ccc6"
+        },
+        "name": "Mary Jane",
+        "registration": False
+    },
+    {
+        "_id": {
+            "$oid": "6435d3d53308bd6d0ef8ccc7"
+        },
+        "name": "Syeda",
+        "registration": True
+    },
+    {
+        "_id": {
+            "$oid": "6435d3fb3308bd6d0ef8ccc8"
+        },
+        "name": "Xutung",
+        "registration": True
+    },
+    {
+        "_id": {
+            "$oid": "6435d4333308bd6d0ef8ccc9"
+        },
+        "name": "Justin",
+        "registration": True
+    },
+    {
+        "_id": {
+            "$oid": "6435d4d63308bd6d0ef8cccb"
+        },
+        "name": "Alice",
+        "registration": True
+    }
+]
+
+# Insert the documents into the collection
+result = collection.insert_many(documents)
+
+# Print the IDs of the inserted documents
+print(result.inserted_ids)
