@@ -16,9 +16,6 @@ import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 
-import org.bson.Document;
-import java.util.Iterator;
-
 public class StudentRegistrationStatus<App> extends AppCompatActivity {
     TextView nav_registration_status_message;
 

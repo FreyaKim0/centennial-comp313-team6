@@ -1,39 +1,98 @@
 package com.example.centenarioschoolapp;
 
-import android.content.Context;
-
-import androidx.test.platform.app.InstrumentationRegistry;
-import androidx.test.ext.junit.runners.AndroidJUnit4;
-
+import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-
 import static org.junit.Assert.*;
 
-import androidx.test.espresso.Espresso;
-import androidx.test.espresso.matcher.ViewMatchers;
-import androidx.test.rule.ActivityTestRule;
-import org.junit.Rule;
-import org.junit.Test;
-import com.example.centenarioschoolapp.StudentRegistrationStatus;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+import java.io.IOException;
 
-import static androidx.test.espresso.assertion.ViewAssertions.matches;
-import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
-import static androidx.test.espresso.matcher.ViewMatchers.withId;
-import static androidx.test.espresso.matcher.ViewMatchers.withText;
+import android.content.Context;
+import androidx.test.platform.app.InstrumentationRegistry;
 
-/**
- * Instrumented test, which will execute on an Android device.
- *
- * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
- */
-@RunWith(AndroidJUnit4.class)
 public class StudentRegistrationStatusTest {
+    private OkHttpClient httpClient;
 
+    @Before
+    public void setUp() {
+        httpClient = new OkHttpClient();
+    }
+
+    // Frontend: App render properly
     @Test
     public void useAppContext() {
-        // Test frontend: Test if the whole app render successfully
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
         assertEquals("com.example.centenarioschoolapp", appContext.getPackageName());
+    }
+
+    // Backend: Student registration GET api return values
+    @Test
+    public void testGetStudentRegistrationStatusReturnTrue() throws IOException {
+        String apiUrl = "mongodb+srv://zannatulsakina: gAQEnlXLX8ejm3Rm>@team6centenario.0vezpan.mongodb.net/?retryWrites=true&w=majority";
+
+        Request request = new Request.Builder()
+                .url(apiUrl + "?name=Alice")
+                .build();
+
+        // Send GET requrest to MongoDB Atlas
+        Response response = httpClient.newCall(request).execute();
+
+        // Check the response is not null
+        assertNotNull(response);
+
+        // Check the response status is 200
+        assertEquals(200, response.code());
+
+        // Get the response data string
+        String responseBody = response.body().string();
+
+        // Check the response data string is not null
+        assertNotNull(responseBody);
+
+        // Extract the registration status and check it's true for 'Alice'
+        assertTrue(responseBody.contains("\"registration\": true"));
+    }
+
+    @Test
+    public void testGetStudentRegistrationStatusReturnFalse() throws IOException {
+
+        String apiUrl = "mongodb+srv://zannatulsakina: gAQEnlXLX8ejm3Rm>@team6centenario.0vezpan.mongodb.net/?retryWrites=true&w=majority";
+
+        Request request = new Request.Builder()
+                .url(apiUrl + "?name=Mary Jane")
+                .build();
+
+        Response response = httpClient.newCall(request).execute();
+        assertNotNull(response);
+        assertEquals(200, response.code());
+        String responseBody = response.body().string();
+        assertNotNull(responseBody);
+        assertTrue(responseBody.contains("\"registration\": false"));
+    }
+
+    @Test
+    public void testGetStudentRegistrationStatusReturnNull() throws IOException {
+        String apiUrl = "mongodb+srv://zannatulsakina: gAQEnlXLX8ejm3Rm>@team6centenario.0vezpan.mongodb.net/?retryWrites=true&w=majority";
+        Request request = new Request.Builder()
+                .url(apiUrl + "?name=Null")
+                .build();
+        Response response = httpClient.newCall(request).execute();
+        assertNotNull(response);
+        assertEquals(200, response.code());
+        String responseBody = response.body().string();
+        assertNull(responseBody);
+    }
+
+    @Test
+    public void testGetStudentRegistrationStatusReturn500() throws IOException {
+        String apiUrl = "mongodb+srv://zannatulsakina: gAQEnlXLX8ejm3Rm>@team6centenario.0vezpan.mongodb.net/?retryWrites=true&w=majority";
+        Request request = new Request.Builder()
+                .url(apiUrl + "?birthday=2023.04.16")
+                .build();
+        Response response = httpClient.newCall(request).execute();
+        assertNotNull(response);
+        assertEquals(500, response.code());
     }
 }
