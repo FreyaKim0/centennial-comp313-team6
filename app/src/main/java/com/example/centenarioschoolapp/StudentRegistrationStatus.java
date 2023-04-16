@@ -18,12 +18,10 @@ import org.bson.Document;
 
 public class StudentRegistrationStatus<App> extends AppCompatActivity {
     TextView nav_registration_status_message;
-
     String mockStatus = "";
     private ImageView imageViewCheckValidName;
     private EditText searchInput;
     private Button searchButton;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +31,6 @@ public class StudentRegistrationStatus<App> extends AppCompatActivity {
         searchButton = findViewById(R.id.nav_registration_search_button);
         
         imageViewCheckValidName = findViewById(R.id.imageView_check_valid_name);
-
         if (mockStatus.equals("API return 'Mock Server Error'")) {
             nav_registration_status_message = (TextView) findViewById(R.id.nav_registration_status_message);
             nav_registration_status_message.setText("Server Error...");
@@ -41,7 +38,6 @@ public class StudentRegistrationStatus<App> extends AppCompatActivity {
         if (mockStatus.equals("API return 'Student name not existing'")) {
             nav_registration_status_message.setText("This Student Not Existing");
         }
-
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,7 +70,6 @@ public class StudentRegistrationStatus<App> extends AppCompatActivity {
             }
         });
     }
-
     public boolean setApiReturnStatus() {
         if(1==1/*Return registration is true*/){
             return true;
