@@ -1,30 +1,31 @@
 package com.example.centenarioschoolapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.mongodb.ConnectionString;
+import com.mongodb.MongoClientSettings;
+import com.mongodb.MongoException;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoDatabase;
+import org.bson.Document;
 
-public class StudentRegistrationStatus extends AppCompatActivity {
+import org.bson.Document;
+import java.util.Iterator;
+
+public class StudentRegistrationStatus<App> extends AppCompatActivity {
     TextView nav_registration_status_message;
-    // Test: "API return 'Mock Server Error'"
-    // Test: "API return 'Student name not existing'"
+
     String mockStatus = "";
     private ImageView imageViewCheckValidName;
-
     private EditText searchInput;
     private Button searchButton;
-    // private TextView resultText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,6 @@ public class StudentRegistrationStatus extends AppCompatActivity {
         searchButton = findViewById(R.id.nav_registration_search_button);
         
         imageViewCheckValidName = findViewById(R.id.imageView_check_valid_name);
-        //resultText = findViewById(R.id.result_text);
 
         if (mockStatus.equals("API return 'Mock Server Error'")) {
             nav_registration_status_message = (TextView) findViewById(R.id.nav_registration_status_message);
@@ -50,7 +50,24 @@ public class StudentRegistrationStatus extends AppCompatActivity {
             public void onClick(View view) {
 
                 String inputName = searchInput.getText().toString();
-                // Call GET api here - Justin's task
+                String connectionString = "mongodb://zannatulsakina:gAQEnlXLX8ejm3Rm@ac-fjn97pp-shard-00-00.0vezpan.mongodb.net:27017,ac-fjn97pp-shard-00-01.0vezpan.mongodb.net:27017,ac-fjn97pp-shard-00-02.0vezpan.mongodb.net:27017/?ssl=true&replicaSet=atlas-cyqst2-shard-0&authSource=admin&retryWrites=true&w=majority";
+
+                MongoClientSettings settings = MongoClientSettings.builder()
+                        .applyConnectionString(new ConnectionString(connectionString))
+                        .build();
+
+                // Create a new client and connect to the server
+                try (MongoClient mongoClient = MongoClients.create(settings)) {
+                    try {
+                        // Send a ping to confirm a successful connection
+                        MongoDatabase database = mongoClient.getDatabase("admin");
+                        database.runCommand(new Document("ping", 1));
+                        System.out.println("Pinged your deployment. You successfully connected to MongoDB!");
+                    } catch (MongoException e) {
+                        nav_registration_status_message = (TextView) findViewById(R.id.nav_registration_status_message);
+                        nav_registration_status_message.setText(e.getMessage());
+                    }
+                }
 
                 if (setApiReturnStatus()) {
                     imageViewCheckValidName.setImageResource(R.drawable.yes);
@@ -61,7 +78,6 @@ public class StudentRegistrationStatus extends AppCompatActivity {
         });
     }
 
-    // Update backend status from here - Freya's task
     public boolean setApiReturnStatus() {
         if(1==1/*Return registration is true*/){
             return true;
